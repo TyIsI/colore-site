@@ -27,7 +27,9 @@
     "postbuild": "cp build/index.html build/404.html",
     "deploy": "npx gh-pages -d build",
     "create:component": "npx generate-react-cli component",
-    "create:page": "npx generate-react-cli component --type=page"
+    "create:page": "npx generate-react-cli component --type=page",
+    "commit": "npx git-cz",
+    "release": "npx standard-version"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^8.0.1",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.25.2",
@@ -58,5 +61,10 @@
   },
   "resolutions": {
     "autoprefixer": "10.4.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
