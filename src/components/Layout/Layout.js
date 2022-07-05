@@ -1,6 +1,6 @@
 // import PropTypes from 'prop-types'
 
-import { Container } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import { Outlet } from 'react-router-dom'
 import classNames from 'classnames'
 
@@ -13,11 +13,17 @@ import styles from './Layout.module.scss'
 
 const Layout = () => (
   <Container className={classNames([styles.Layout])}>
-    <Header />
-    <Navigation />
-    <PageHeader />
-    <Outlet />
-    <Footer />
+    <Row>
+      <Col xs={3} md={1} lg={0}></Col>
+      <Col xs={6} md={12} lg={12} className={classNames([styles.Content])}>
+        <Header />
+        <Navigation />
+        <PageHeader />
+        <Outlet />
+        <Footer />
+      </Col>
+      <Col xs={3} md={1} lg={0}></Col>
+    </Row>
   </Container>
 )
 

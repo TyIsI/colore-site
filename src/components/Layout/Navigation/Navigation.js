@@ -22,7 +22,6 @@ const Navigation = () => {
   return (
     <Nav activeKey={activeKey} className={classNames(['spacious', styles.Navigation])}>
       {menuItems.map(item => {
-        console.log({ item })
         return (
           <li key={item}>
             <Nav.Item>

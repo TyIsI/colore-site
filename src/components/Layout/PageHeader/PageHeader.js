@@ -27,7 +27,6 @@ const PageHeader = () => {
           <Col> */}
         <Nav activeKey={activeKey} className={classNames(['spacious', 'justify-content-end', styles.PageHeaderNav])}>
           {menuItems.map(item => {
-            console.log({ item })
             return (
               <li key={item}>
                 <Nav.Item>
