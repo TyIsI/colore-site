@@ -24,6 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
+    "postbuild": "cp build/index.html build/404.html",
     "deploy": "npx gh-pages -d build",
     "create:component": "npx generate-react-cli component",
     "create:page": "npx generate-react-cli component --type=page"
