@@ -1,4 +1,7 @@
 // import PropTypes from 'prop-types'
+
+import { LinkContainer } from 'react-router-bootstrap'
+
 import styles from './Documentation.module.scss'
 
 const Documentation = () => (
@@ -11,13 +14,13 @@ const Documentation = () => (
     </p>
     <ul>
       <li>
-        <a href="/background" title="Background">Background</a>
+        <LinkContainer to="/background"><a title="Background">Background</a></LinkContainer>
       </li>
       <li>
-        <a href="/specification" title="Specification">Specification</a>
+        <LinkContainer to="/specification"><a title="Specification">Specification</a></LinkContainer>
       </li>
       <li>
-        <a href="/implementations" title="Implementations">Implementations</a>
+        <LinkContainer to="/implementations"><a title="Implementations">Implementations</a></LinkContainer>
       </li>
     </ul>
   </div>

@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router'
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import Layout from 'components/Layout/Layout'
 
 import Loading from 'pages/Loading/Loading'
@@ -22,7 +22,7 @@ const Wiki = lazy(() => import('pages/Wiki/Wiki'))
 function App () {
   return (
     <Suspense fallback={<Loading />}>
-      <BrowserRouter basename={process.env.PUBLIC_URL ?? '/'}>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -38,9 +38,8 @@ function App () {
             <Route path="wiki" element={<Wiki />} />
             <Route path="*" element={<Home />} />
           </Route>
-          <Route path="/loading" element={<Loading />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter >
     </Suspense>
   )
 }
