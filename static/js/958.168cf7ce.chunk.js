@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcolore_github_io=self.webpackChunkcolore_github_io||[]).push([[958],{958:function(i,e,r){r.r(e),r.d(e,{default:function(){return t}});var u="Wiki_Wiki__dGOhN",n=r(184),c=function(){return(0,n.jsx)("div",{className:u,children:(0,n.jsx)("h2",{children:"Wiki"})})};c.defaultProps={};var t=c}}]);
+//# sourceMappingURL=958.168cf7ce.chunk.js.map

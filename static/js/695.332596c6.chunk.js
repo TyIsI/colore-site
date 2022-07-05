@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcolore_github_io=self.webpackChunkcolore_github_io||[]).push([[695],{695:function(i,c,e){e.r(c),e.d(c,{default:function(){return r}});var n="Specification_Specification__OGFlE",t=e(184),o=function(){return(0,t.jsx)("div",{className:n,children:(0,t.jsx)("h2",{children:"Specification"})})};o.defaultProps={};var r=o}}]);
+//# sourceMappingURL=695.332596c6.chunk.js.map
