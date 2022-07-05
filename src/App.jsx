@@ -22,7 +22,7 @@ const Wiki = lazy(() => import('pages/Wiki/Wiki'))
 function App () {
   return (
     <Suspense fallback={<Loading />}>
-      <BrowserRouter base="/">
+      <BrowserRouter basename={process.env.PUBLIC_URL ?? '/'}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
