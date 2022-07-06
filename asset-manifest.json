@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "https://tyisi.github.io/colore-site/static/css/main.0aa60078.css",
-    "main.js": "https://tyisi.github.io/colore-site/static/js/main.1e0a6ad7.js",
+    "main.css": "https://tyisi.github.io/colore-site/static/css/main.6adfb5f9.css",
+    "main.js": "https://tyisi.github.io/colore-site/static/js/main.aecc2df6.js",
     "static/css/237.50e3cfbf.chunk.css": "https://tyisi.github.io/colore-site/static/css/237.50e3cfbf.chunk.css",
     "static/js/237.08d598e4.chunk.js": "https://tyisi.github.io/colore-site/static/js/237.08d598e4.chunk.js",
     "static/css/529.fe5e9566.chunk.css": "https://tyisi.github.io/colore-site/static/css/529.fe5e9566.chunk.css",
     "static/js/529.03dfc84f.chunk.js": "https://tyisi.github.io/colore-site/static/js/529.03dfc84f.chunk.js",
     "static/css/742.369880fb.chunk.css": "https://tyisi.github.io/colore-site/static/css/742.369880fb.chunk.css",
-    "static/js/742.13f80074.chunk.js": "https://tyisi.github.io/colore-site/static/js/742.13f80074.chunk.js",
+    "static/js/742.5b976458.chunk.js": "https://tyisi.github.io/colore-site/static/js/742.5b976458.chunk.js",
     "static/css/411.70c69caa.chunk.css": "https://tyisi.github.io/colore-site/static/css/411.70c69caa.chunk.css",
     "static/js/411.80f32c00.chunk.js": "https://tyisi.github.io/colore-site/static/js/411.80f32c00.chunk.js",
     "static/css/448.ddf7bed1.chunk.css": "https://tyisi.github.io/colore-site/static/css/448.ddf7bed1.chunk.css",
@@ -27,14 +27,14 @@
     "static/js/787.f8aabc04.chunk.js": "https://tyisi.github.io/colore-site/static/js/787.f8aabc04.chunk.js",
     "static/media/page-header.jpg": "https://tyisi.github.io/colore-site/static/media/page-header.91d545fa5b4f2906c34e.jpg",
     "index.html": "https://tyisi.github.io/colore-site/index.html",
-    "main.0aa60078.css.map": "https://tyisi.github.io/colore-site/static/css/main.0aa60078.css.map",
-    "main.1e0a6ad7.js.map": "https://tyisi.github.io/colore-site/static/js/main.1e0a6ad7.js.map",
+    "main.6adfb5f9.css.map": "https://tyisi.github.io/colore-site/static/css/main.6adfb5f9.css.map",
+    "main.aecc2df6.js.map": "https://tyisi.github.io/colore-site/static/js/main.aecc2df6.js.map",
     "237.50e3cfbf.chunk.css.map": "https://tyisi.github.io/colore-site/static/css/237.50e3cfbf.chunk.css.map",
     "237.08d598e4.chunk.js.map": "https://tyisi.github.io/colore-site/static/js/237.08d598e4.chunk.js.map",
     "529.fe5e9566.chunk.css.map": "https://tyisi.github.io/colore-site/static/css/529.fe5e9566.chunk.css.map",
     "529.03dfc84f.chunk.js.map": "https://tyisi.github.io/colore-site/static/js/529.03dfc84f.chunk.js.map",
     "742.369880fb.chunk.css.map": "https://tyisi.github.io/colore-site/static/css/742.369880fb.chunk.css.map",
-    "742.13f80074.chunk.js.map": "https://tyisi.github.io/colore-site/static/js/742.13f80074.chunk.js.map",
+    "742.5b976458.chunk.js.map": "https://tyisi.github.io/colore-site/static/js/742.5b976458.chunk.js.map",
     "411.70c69caa.chunk.css.map": "https://tyisi.github.io/colore-site/static/css/411.70c69caa.chunk.css.map",
     "411.80f32c00.chunk.js.map": "https://tyisi.github.io/colore-site/static/js/411.80f32c00.chunk.js.map",
     "448.ddf7bed1.chunk.css.map": "https://tyisi.github.io/colore-site/static/css/448.ddf7bed1.chunk.css.map",
@@ -54,7 +54,7 @@
     "787.f8aabc04.chunk.js.map": "https://tyisi.github.io/colore-site/static/js/787.f8aabc04.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0aa60078.css",
-    "static/js/main.1e0a6ad7.js"
+    "static/css/main.6adfb5f9.css",
+    "static/js/main.aecc2df6.js"
   ]
 }
