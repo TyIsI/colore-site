@@ -29,7 +29,8 @@
     "create:component": "npx generate-react-cli component",
     "create:page": "npx generate-react-cli component --type=page",
     "commit": "npx git-cz",
-    "release": "npx standard-version"
+    "release": "npx standard-version",
+    "postrelease": "yarn deploy"
   },
   "eslintConfig": {
     "extends": [
