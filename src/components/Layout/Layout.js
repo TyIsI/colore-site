@@ -14,15 +14,15 @@ import styles from './Layout.module.scss'
 const Layout = () => (
   <Container className={classNames([styles.Layout])}>
     <Row>
-      <Col xs={3} md={1} lg={0}></Col>
-      <Col xs={6} md={12} lg={12} className={classNames([styles.Content])}>
+      <Col xs={3} md={1} lg={3}></Col>
+      <Col xs={6} md={12} lg={6} className={classNames([styles.Content])}>
         <Header />
         <Navigation />
         <PageHeader />
         <Outlet />
         <Footer />
       </Col>
-      <Col xs={3} md={1} lg={0}></Col>
+      <Col xs={3} md={1} lg={3}></Col>
     </Row>
   </Container>
 )
