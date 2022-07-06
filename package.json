@@ -30,7 +30,9 @@
     "create:page": "npx generate-react-cli component --type=page",
     "commit": "npx git-cz",
     "release": "npx standard-version",
-    "postrelease": "yarn deploy"
+    "postrelease": "yarn deploy",
+    "postpostrelease": "yarn push",
+    "push": "git push --follow-tags origin master"
   },
   "eslintConfig": {
     "extends": [
