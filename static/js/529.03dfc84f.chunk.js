@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkcolore_github_io=self.webpackChunkcolore_github_io||[]).push([[529],{529:function(t,n,c){c.r(n),c.d(n,{default:function(){return u}});var e="Contact_Contact__qNWEa",o=c(184),r=function(){return(0,o.jsx)("div",{className:e,children:(0,o.jsx)("h2",{children:"Contact"})})};r.defaultProps={};var u=r}}]);
-//# sourceMappingURL=529.03dfc84f.chunk.js.map
