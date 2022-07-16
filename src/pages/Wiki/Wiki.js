@@ -51,15 +51,13 @@ const Wiki = ({ page }) => {
   const [loading, setLoading] = useState(true)
   const [content, setContent] = useState(null)
 
-  useEffect(() => {
-    const wikiPath = capitalizeFirstLetter(page != null ? page : pathname.split('/')[1])
+  const wikiPath = capitalizeFirstLetter(page != null ? page : pathname.split('/')[1])
 
+  useEffect(() => {
     getContent(wikiPath, setContent, setLoading)
   }, [])
 
   useEffect(() => {
-    const wikiPath = capitalizeFirstLetter(page != null ? page : pathname.split('/')[1])
-
     getContent(wikiPath, setContent, setLoading)
   }, [page, pathname])
 
@@ -73,7 +71,7 @@ const Wiki = ({ page }) => {
 
   return (
     <div className={styles.Wiki}>
-      <a href={`${wikiUrl}/${page}`}><Image alt="Wiki" className={classNames([styles.WikiLink])} src={WikiImg} /></a>
+      <a href={`${wikiUrl}/${wikiPath}`}><Image alt="Wiki" className={classNames([styles.WikiLink])} src={WikiImg} /></a>
       {loading === false && content.length > 0 && (<ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>)}
     </div>
   )
