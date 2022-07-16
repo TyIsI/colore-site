@@ -14,8 +14,6 @@ const menuItems = ['home', 'background', 'documentation', 'FAQ', 'links', 'conta
 const Navigation = () => {
   const location = useLocation()
 
-  console.log({ location })
-
   const keyIndex = menuItems.findIndex(item => item === location.pathname.split('/')[1])
   const activeKey = keyIndex > -1 ? menuItems[keyIndex] : location.pathname === '/' ? menuItems[0] : null
 

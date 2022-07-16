@@ -11,12 +11,23 @@ import imgPageHeader from '../../../assets/images/page-header.jpg'
 
 import styles from './PageHeader.module.scss'
 
-const menuItems = ['examples', 'downloads', 'wiki']
+const menuItems = {
+  examples: {
+    uri: '/examples'
+  },
+  downloads: {
+    uri: '/downloads'
+  },
+  wiki: {
+    external: true,
+    uri: process.env.REACT_APP_GH_REPO != null ? `https://github.com/${process.env.REACT_APP_GH_REPO}/wiki` : 'https://github.com/Colore/colore.github.io/wiki'
+  }
+}
 
 const PageHeader = () => {
   const location = useLocation()
 
-  const keyIndex = menuItems.findIndex(item => item === location.pathname.split('/')[1])
+  const keyIndex = Object.keys(menuItems).findIndex(item => item === location.pathname.split('/')[1])
   const activeKey = keyIndex > -1 ? menuItems[keyIndex] : null
 
   return (
@@ -26,13 +37,21 @@ const PageHeader = () => {
         {/* <Row>
           <Col> */}
         <Nav activeKey={activeKey} className={classNames(['spacious', 'justify-content-end', styles.PageHeaderNav])}>
-          {menuItems.map(item => {
+          {Object.entries(menuItems).map(([itemKey, itemValue]) => {
             return (
-              <li key={item}>
+              <li key={itemKey}>
                 <Nav.Item>
-                  <LinkContainer to={`/${item}`}>
-                    <Nav.Link eventKey={`${item}`} className={classNames([styles.PageHeaderItem, activeKey === item ? styles.CurrentPageHeaderItem : null])}>{capitalizeFirstLetter(item)}</Nav.Link>
-                  </LinkContainer>
+                  {
+                  itemValue.external != null && itemValue.external === true
+                    ? (
+                      <Nav.Link eventKey={`${itemKey}`} className={classNames([styles.PageHeaderItem, activeKey === itemKey ? styles.CurrentPageHeaderItem : null])} href={`${itemValue.uri}`}>{capitalizeFirstLetter(itemKey)}</Nav.Link>
+                      )
+                    : (
+                      <LinkContainer to={`${itemValue.uri}`}>
+                        <Nav.Link eventKey={`${itemKey}`} className={classNames([styles.PageHeaderItem, activeKey === itemKey ? styles.CurrentPageHeaderItem : null])}>{capitalizeFirstLetter(itemKey)}</Nav.Link>
+                      </LinkContainer>
+                      )
+                }
                 </Nav.Item>
               </li>
             )
