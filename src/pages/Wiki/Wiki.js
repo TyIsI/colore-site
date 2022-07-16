@@ -12,8 +12,10 @@ import WikiImg from '../../assets/images/Wiki.png'
 import { capitalizeFirstLetter } from 'utils'
 import Loading from 'components/Loading/Loading'
 
+const repo = process.env.REACT_APP_GH_REPO != null ? process.env.REACT_APP_GH_REPO : 'Colore/colore.github.io'
+
 const baseUri = (() => {
-  let uri = (process.env.REACT_APP_WIKI_CONTENT_URI != null ? process.env.REACT_APP_WIKI_CONTENT_URI : 'https://raw.githubusercontent.com/wiki')
+  let uri = (process.env.REACT_APP_WIKI_CONTENT_URI != null ? process.env.REACT_APP_WIKI_CONTENT_URI : `https://raw.githubusercontent.com/wiki/${repo}`)
 
   if (uri.substring(uri.length - 1) === '/') {
     uri = uri.substring(0, uri.length - 1)
@@ -22,15 +24,26 @@ const baseUri = (() => {
   return uri
 })()
 
-const wikiUrl = (() => {
-  let url = process.env.REACT_APP_GH_REPO != null ? `https://github.com/${process.env.REACT_APP_GH_REPO}/wiki` : 'https://github.com/Colore/colore.github.io/wiki'
+const wikiUrl = `https://github.com/${repo}/wiki`
 
-  if (url.substring(url.length - 1) === '/') {
-    url = url.substring(0, url.length - 1)
+const getContent = async (wikiPath, setContent, setLoading) => {
+  try {
+    const response = await fetch(`${baseUri}/${wikiPath}.md`)
+    if (response.ok) {
+      const markdown = await response.text()
+
+      setContent(markdown)
+      setLoading(false)
+    } else {
+      setLoading(false)
+      setContent('# Page not found\n\nThis page does not exist.')
+    }
+  } catch (e) {
+    console.log(e)
+    setContent('# Unknown Error\n\nAn unknown error occured while fetching this page.\n\nPlease try again later. Or if this error persists, please report it to the [Colore GitHub repository](' + wikiUrl + ')')
+    setLoading(false)
   }
-
-  return url
-})()
+}
 
 const Wiki = ({ page }) => {
   const { pathname } = useLocation()
@@ -38,37 +51,16 @@ const Wiki = ({ page }) => {
   const [loading, setLoading] = useState(true)
   const [content, setContent] = useState(null)
 
-  const getContent = async (wikiPath) => {
-    try {
-      const response = await fetch(`${baseUri}/${wikiPath}.md`)
-      if (response.ok) {
-        const markdown = await response.text()
-
-        setContent(markdown)
-        setLoading(false)
-      } else {
-        setLoading(false)
-        setContent('# Page not found\n\nThis page does not exist.')
-      }
-    } catch (e) {
-      console.log(e)
-      setContent('# Unknown Error\n\nAn unknown error occured while fetching this page.\n\nPlease try again later. Or if this error persists, please report it to the [Colore GitHub repository](' + wikiUrl + ')')
-      setLoading(false)
-    }
-  }
-
   useEffect(() => {
-    console.log('construction', 'call', page, pathname)
     const wikiPath = capitalizeFirstLetter(page != null ? page : pathname.split('/')[1])
 
-    getContent(wikiPath)
+    getContent(wikiPath, setContent, setLoading)
   }, [])
 
   useEffect(() => {
-    console.log('page update', 'call', page, pathname)
     const wikiPath = capitalizeFirstLetter(page != null ? page : pathname.split('/')[1])
 
-    getContent(wikiPath)
+    getContent(wikiPath, setContent, setLoading)
   }, [page, pathname])
 
   if (loading === true) {
